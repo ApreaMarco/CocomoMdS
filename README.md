@@ -23,6 +23,11 @@ Aprire un terminale e digitare il seguente comando:
 
 ## Progressi
 
+#### 18/12/2022
+- Reimplementato il conteggio delle keyword
+- Calcolato le percentuali per ogni linguaggio
+- Documentato il codice
+
 #### 17/12/2022
 - Creazione e stesura file
 - Creazione dizionari
