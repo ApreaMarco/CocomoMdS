@@ -1,10 +1,10 @@
 # CocomoMdS
 
-Programma in python che determina il linguaggio in cui è scritto un file di codice e controlla se corrisponde all'estensione.
+Programma in python che determina la percentuale di compatibilità di un file di codice con determinati linguaggi di programmazione.
 
 ## Esecuzione
 
-Aprire un terminale e digitare il seguente comando:
+Aprire un terminale con path './Garonzi_Imran_Klein_CocomoMdS/' e digitare il seguente comando:
 - Windows:
   ```
   python main.py
