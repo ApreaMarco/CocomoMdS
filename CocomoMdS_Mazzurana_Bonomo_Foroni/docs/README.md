@@ -1,4 +1,4 @@
-# COCOMO VCS
+# COCOMO MdS
 
 ![Language](https://img.shields.io/badge/Language-Python-blue?style=flat)
 ![Build Status](https://img.shields.io/badge/Status-Release-lightgreen?style=flat)
