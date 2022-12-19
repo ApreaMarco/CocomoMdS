@@ -26,7 +26,7 @@ start the program via a code editor or from the console, enter the file path and
 
 Made by Oliverio Lorenzo and Marcolini Sara
 
-#License
+##License
 
 MIT License
 
