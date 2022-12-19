@@ -32,7 +32,7 @@ def getLanguages(filename):
 
     #Get language used
     percentage = keys.keywordsCount(fileContent)
-    prevalentLang = lang = max(percentage, key=percentage.get)
+    prevalentLang = max(percentage, key=percentage.get)
 
     return percentage, prevalentLang
 
