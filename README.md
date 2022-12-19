@@ -3,7 +3,6 @@
 ![Language](https://img.shields.io/badge/Language-Python-blue?style=flat) 
 ![Platform](https://img.shields.io/badge/OS%20platform%20supported-Linux-blue?style=flat)
 ![Platform](https://img.shields.io/badge/OS%20platform%20supported-Windows-blue?style=flat)
-![Platform](https://img.shields.io/badge/OS%20platform%20supported-macOS-blue?style=flat)
 
 
 ## Description
