@@ -39,7 +39,7 @@ with the following structure:
 	scripts
 		COCOMO_base.py
 
-## Runnig
+## Running
 
 To run the python program you need to have the python program installed on your device correctly.After that, We can open the file from cmd with the "python _file path_" command, or with a default file opening with python Idle or a text editor.
 
