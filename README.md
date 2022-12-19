@@ -1,36 +1,36 @@
 # CocomoMdS
 
-Programma in python che determina la percentuale di compatibilità di un file di codice con determinati linguaggi di programmazione.
+Python program that determines the percentage of compatibility of a code file with certain programming languages.
 
-## Esecuzione
+## Execution
 
-Aprire un terminale con path './Garonzi_Imran_Klein_CocomoMdS/' e digitare il seguente comando:
-- Windows:
+Open a terminal with path './bin/Garonzi_Imran_Klein_CocomoMdS/' and type the following command:
+-Windows:
   ```
   python main.py
   ```
 
-- Linux:
+-Linux:
   ```
   python3 main.py
   ```
 
-## Gruppo
+## Group
 
 - talhaimran
 - marcellogaronzi
 - leonklein
 
-## Progressi
+## Progress
 
-#### 18/12/2022
-- Reimplementato il conteggio delle keyword
-- Calcolato le percentuali per ogni linguaggio
-- Documentato il codice
+#### 12/18/2022
+- Reimplemented the keyword count
+- Calculated the percentages for each language
+- Documented the code
 
-#### 17/12/2022
-- Creazione e stesura file
-- Creazione dizionari
-- Inserimento input con relativi controlli
-- Realizzazione della funzione che conta le keywords con output
-- Revisioni e migliorie varie
+#### 12/17/2022
+- Creation and drafting of files
+- Creating dictionaries
+- Insertion of inputs with relative controls
+- Implementation of the function that counts the keywords with output
+- Various revisions and improvements
