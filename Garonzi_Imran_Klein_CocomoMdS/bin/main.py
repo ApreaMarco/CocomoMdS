@@ -7,6 +7,7 @@ import os
 import re
 from collections import Counter
 from keywords import LANGS
+import cocomo
 
 # Globali
 PRODUCTION = True
@@ -123,10 +124,12 @@ def main():
         else:
             if estensione in LANGS[languages[0]]["estensioni"]:
                 print(f"Linguaggio rilevato: {languages[0]}; Il linguaggio corrisponde all'estensione.")
+                cocomo.cocomoStart(filepath)
             else:
                 print(f"Linguaggio rilevato: {languages[0]}; Il linguaggio non corrisponde all'estensione.")
     else:
         print("Linguaggio di programmazione non riconosciuto.")
+
 
 
 if __name__ == '__main__':
