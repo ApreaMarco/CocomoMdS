@@ -5,12 +5,13 @@ Python program that determines the percentage of compatibility of a code file wi
 ## Execution
 
 Open a terminal with path './bin/Garonzi_Imran_Klein_CocomoMdS/' and type the following command:
--Windows:
+
+- Windows:
   ```
   python main.py
   ```
 
--Linux:
+- Linux:
   ```
   python3 main.py
   ```
