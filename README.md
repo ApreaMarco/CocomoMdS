@@ -12,7 +12,7 @@ Python program that determines the percentage of compatibility of a code file wi
 
 ## Execution
 
-Open a terminal with path './bin/Garonzi_Imran_Klein_CocomoMdS/' and type the following command:
+Open a terminal with path './Garonzi_Imran_Klein_CocomoMdS/bin/Garonzi_Imran_Klein_CocomoMdS/' and type the following command:
 
 - Windows:
   ```
