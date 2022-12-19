@@ -28,12 +28,12 @@ The code written can determine which language the selected file is written in, n
 
 ### Development
 
-1. Problem analysis
-2. Solution plan for the problem
-3. Code writing 
-4. Code improvment
-5. Code debugging
-6. Resolution of any error
+1.  Problem analysis
+2.  Solution plan for the problem
+3.  Code writing 
+4.  Code improvment
+5.  Code debugging
+6.  Resolution of any error
 
 ### Directory management
 
