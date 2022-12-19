@@ -1,5 +1,10 @@
 # CocomoMdS
 
+![Language](https://img.shields.io/badge/Language-Python-green?style=flat) 
+![Platform](https://img.shields.io/badge/OS%20platform%20supported-Linux-blue?style=flat)
+![Platform](https://img.shields.io/badge/OS%20platform%20supported-Windows-blue?style=flat)
+![Platform](https://img.shields.io/badge/OS%20platform%20supported-macOS-blue?style=flat)
+
 Python program that determines the percentage of compatibility of a code file with certain programming languages.
 
 ## Execution
