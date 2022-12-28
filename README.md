@@ -1,8 +1,9 @@
-# COCOMO MdS
+# COCOMO VCS
 
 ![Language](https://img.shields.io/badge/Language-Python-blue?style=flat)
 ![Build Status](https://img.shields.io/badge/Status-Release-lightgreen?style=flat)
-![Version](https://img.shields.io/badge/Version-v1.0-red?style=flat)
+![Version](https://img.shields.io/badge/Version-v2.0-red?style=flat)
+[![License](https://img.shields.io/badge/License-GPL-lightblue.svg?style=flat)](https://www.gnu.org/licenses/gpl-3.0)
 
 The code written can determine which language the selected file is written in.
 
@@ -13,8 +14,8 @@ The code written can determine which language the selected file is written in.
 
 ### Description
 
-The code written can determine which language the selected file is written in, not based on the file extension, but rather by analysing the code itself and providing a percentage of which languages it consists of:
-- pyhon
+The code written can determine which language the selected file is written in, not based on the file extension, but rather by analyzing the code itself and providing a percentage of which languages it consists of:
+- python
 - java
 - c
 - c++
@@ -28,20 +29,35 @@ The code written can determine which language the selected file is written in, n
 
 ### Development
 
-1.  Problem analysis
-2.  Solution plan for the problem
-3.  Code writing 
-4.  Code improvment
-5.  Code debugging
-6.  Resolution of any error
+1. Problem analysis
+2. Solution plan for the problem
+3. Code writing
+4. Code improvement
+5. Code debugging
+6. Resolution of any error
 
 ### Directory management
 
 - bin
+  - cocomo.py
   - main.py
   - keywords.py
 - docs
   - README.md
+- keywords
+  - assembly.txt
+  - bash.txt
+  - batch.txt
+  - c.txt
+  - c#.txt
+  - c++.txt
+  - java.txt
+  - javascript.txt
+  - php.txt
+  - powershell.txt
+  - python.txt
+- result
+  - results.txt
 - tables
   - company-organization-chart.xlsx
   - work-breakdown-structure.xlsx
@@ -68,4 +84,3 @@ To execute the program type this in the terminal
 - Giovanni Bonomo, 19036@studenti.marconiverona.edu.it
 - Riccardo Mazzurana, 19118@studenti.marconiverona.edu.it
 - Pietro Foroni, 19039@studenti.marconiverona.edu.it
-
