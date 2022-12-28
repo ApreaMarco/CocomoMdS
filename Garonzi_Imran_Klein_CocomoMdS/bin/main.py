@@ -1,6 +1,6 @@
 """
-Descrizione: Programma in python che determina il linguaggio in cui è scritto un file di codice e controlla se
-             corrisponde all'estensione.
+Descrizione: Python program that determines the language in which a code file is written and checks
+             if it matches its extension.
 """
 
 import os
@@ -9,36 +9,36 @@ from collections import Counter
 from keywords import LANGS
 import cocomo
 
-# Globali
+# Globals
 PRODUCTION = True
-DEBUG = False
+DEBUG = True
 
 
-# Funzioni
-def conteggio_keywords(filepath):
+# Functions
+def count_keywords(filepath):
     """
-    Analizza un file di codice e ritorna un dizionario di percentuali pro i seguenti linguaggi:
+    Analyzes a code file and return a dictionary of percentages for the following languages:
     python, java, c, c++, c#, php, javascript, assembly 8086, batch, bash, powershell.
 
         Parameters:
-            filepath (str): Percorso del file da analizzare
+            filepath (str): Path to the file to analyze
 
         Returns
-            percentages (dict): Dizionario di percentuali per ogni linguaggio
+            percentages (dict): Dictionary of percentages for every language
     """
-    # Apertura e lettura del file
+    # Open and read the file
     file = open(filepath, 'r')
     content = file.read()
     file.close()
 
-    # Conteggio delle key words
-    keywords = re.split("\n| |[(]|[{]|=|[+]|-|[*]|/|,|;|[.]|:|<|[$]", content)
+    # Keywords counting
+    keywords = re.split("\n| |[(]|[)]|[{]|[}]|=|[+]|-|[*]|/|,|;|[.]|:|<|[$]", content)
 
-    keyword_occurrences = Counter(keywords)  # Raggruppa le keyword
-    keyword_occurrences.pop("")  # Elimina gli spazi vuoti
+    keyword_occurrences = Counter(keywords)  # Group keywords
+    keyword_occurrences.pop("")  # Delete empty spaces
     unrecognized_keywords = dict.fromkeys(keyword_occurrences, 0)
 
-    # Conta le keyword per ogni linguaggio
+    # Count keywords for every language
     counters = dict.fromkeys(LANGS, 0)
     for lang in LANGS:
         for key in keyword_occurrences:
@@ -46,13 +46,13 @@ def conteggio_keywords(filepath):
                 counters[lang] += keyword_occurrences[key]
                 unrecognized_keywords[key] += 1
 
-    # Conta le keyword non riconosciute
+    # Count unrecognized keywords
     counters["unrecognized"] = 0
     for key in unrecognized_keywords:
         if not unrecognized_keywords[key]:
             counters["unrecognized"] += keyword_occurrences[key]
 
-    # Calcola le percentuali
+    # Calculate percentages
     tot = sum(keyword_occurrences.values())
     percentages = {lang: (100 * counters[lang] / tot) for lang in counters}
 
@@ -61,80 +61,83 @@ def conteggio_keywords(filepath):
 
 def is_valid(filepath, verbose=False):
     """
-    Controlla se un percorso esiste e se è un file.
+    Checks if a path exists and corresponds to a file.
 
         Parameters:
-            filepath (str): Percorso del file
-            verbose (bool): Se impostato a True visualizza i messaggi di errore
+            filepath (str): Path to the file
+            verbose (bool): If true prints error messages
 
         Returns:
-            validity (bool): Validità del file
+            validity (bool): File validity
     """
     if not os.path.exists(filepath):
         if verbose:
-            print("File non esistente.")
+            print("File does not exist.")
         return False
     elif not os.path.isfile(filepath):
         if verbose:
-            print("Il percorso immesso non è un file.")
+            print("The path entered is not a file.")
         return False
     else:
         return True
 
 
 def main():
-    # Input file
-    if DEBUG:
-        filepath = "test/test.py"
-    else:
-        filepath = input('Inserisci il percorso del file: ')
-        while not is_valid(filepath):
-            filepath = input('Errore! Reinserisci il percorso del file: ')
-
-    # Analizza il file
-    percentages = conteggio_keywords(filepath)
-
-    # Individua linguaggio ed estensione
-    estensione = os.path.splitext(filepath)[1]
-
-    lang_percentages = {key: percentages[key] for key in percentages if key != "unrecognized"}  # Escludi unrecognized
-    max_percentage = max(lang_percentages.values())  # Individua la percentuale massima
-
-    languages = None
-    if max_percentage > 0:  # Se c'è almeno un linguaggio con percentuale maggiore di zero
-        # Linguaggi con la percentuale massima
-        languages = [lang for lang in lang_percentages if lang_percentages[lang] == max_percentage]
-        # Cerca se almeno uno di essi corrisponde all'estensione del file
-        for lang in languages:
-            if estensione in LANGS[lang]["estensioni"]:
-                languages = [lang]
-                break
-
-    # Stampa del risultato
-    print("File analizzato:", filepath)
-
-    print()  # Percentuali
-    for key in percentages:
-        print(f"{key}: {round(percentages[key], 2)}%")
-    print()
-
-    if languages:
-        if len(languages) > 1:
-            print(f"Linguaggi rilevati: {', '.join(languages)}; Nessuno di essi corrisponde all'estensione.")
+    user_continue = True
+    while user_continue:
+        # Input file
+        if DEBUG:
+            filepath = "../test/test.py"
         else:
-            if estensione in LANGS[languages[0]]["estensioni"]:
-                print(f"Linguaggio rilevato: {languages[0]}; Il linguaggio corrisponde all'estensione.")
-            else:
-                print(f"Linguaggio rilevato: {languages[0]}; Il linguaggio non corrisponde all'estensione.")
-        cocomo.cocomoStart(filepath)
-    else:
-        print("Linguaggio di programmazione non riconosciuto.")
-        choise = input('Vuoi eseguire lo stesso il cocomo? [y/n]: ')
-        if choise == "y":
-            cocomo.cocomoStart(filepath)
-    print("Analisi file terminata")
-        
+            filepath = input('Insert file path: ')
+            while not is_valid(filepath):
+                filepath = input('Error! Reinsert file path: ')
 
+        # Analyze file
+        percentages = count_keywords(filepath)
+
+        # Get language and extension
+        extension = os.path.splitext(filepath)[1]
+
+        lang_percentages = {key: percentages[key] for key in percentages if key != "unrecognized"}  # Excl. unrecognized
+        max_percentage = max(lang_percentages.values())  # Find the highest percentage
+
+        languages = None
+        if max_percentage > 0:  # If there is at least one language with percentage greater than 0
+            # Languages with the highest percentage
+            languages = [lang for lang in lang_percentages if lang_percentages[lang] == max_percentage]
+            # Check if at least one of them corresponds to the file extension
+            for lang in languages:
+                if extension in LANGS[lang]["estensioni"]:
+                    languages = [lang]
+                    break
+
+        # Print the result
+        print("Analyzed file:", filepath)
+
+        print()  # Percentages
+        for key in percentages:
+            print(f"{key}: {round(percentages[key], 2)}%")
+        print()
+
+        if languages:
+            if len(languages) > 1:
+                print(f"Detected languages: {', '.join(languages)}; None of them corresponds to the extension.")
+            else:
+                if extension in LANGS[languages[0]]["estensioni"]:
+                    print(f"Detected language: {languages[0]}; Language does correspond to the extension.")
+                else:
+                    print(f"Detected language: {languages[0]}; Language does not correspond to the extension.")
+            cocomo.cocomoStart(filepath)
+        else:
+            print("Unable to recognize programming language.")
+            choice = input("Do you want to run cocomo anyway? [y/n]: ")
+            if choice.lower() == "y":
+                cocomo.cocomoStart(filepath)
+
+        print("File analysis ended")
+        print()
+        user_continue = input("Do you want to analyze another file? [y/n]: ").lower() == "y"
 
 
 if __name__ == '__main__':
