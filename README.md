@@ -1,5 +1,5 @@
 # COCOMO_VCS_GITHUB
-![Author](https://img.shields.io/badge/author-Oliverio%20Lorenzo%2C%20Marcolini%20Sara-blue)
+![Author](https://img.shields.io/badge/author-Oliverio%20Lorenzo%20%20Marcolini%20Sara%20%20Grasso%20Ludovico-blue)
 ![Language](https://img.shields.io/badge/language-python-orange?style=flat)
 ![Platform](https://img.shields.io/badge/OS%20platform%20supported-All-blue?style=flat)
 ![Testing](https://img.shields.io/badge/version-v01.01-green)
@@ -24,7 +24,7 @@ start the program via a code editor or from the console, enter the file path and
 
 ## Author
 
-Made by Oliverio Lorenzo and Marcolini Sara
+Made by Oliverio Lorenzo, Ludovico Grasso and Marcolini Sara
 
 ## License
 
@@ -55,4 +55,5 @@ SOFTWARE.
 If you have any problem please contact us:
 > 19133@studenti.marconiverona.edu.it
 > 19113@studenti.marconiverona.edu.it
+> 19212@studenti.marconiverona.edu.it
  
