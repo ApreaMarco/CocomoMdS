@@ -1,0 +1,9 @@
+# Editor folders
+.idea/
+.vscode/
+
+# Test files
+test/
+
+# Python cache
+*cache*
