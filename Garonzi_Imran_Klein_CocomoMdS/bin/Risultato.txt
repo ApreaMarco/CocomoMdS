@@ -1,0 +1,7 @@
+Caratteristiche del file 'cocomo.py'
+
+Cocomo base:
+Numero di righe di codice = 156
+Difficolta = Facile
+Mesi uomo = 0.34
+Tempo di sviluppo = 1.66

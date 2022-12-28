@@ -124,11 +124,16 @@ def main():
         else:
             if estensione in LANGS[languages[0]]["estensioni"]:
                 print(f"Linguaggio rilevato: {languages[0]}; Il linguaggio corrisponde all'estensione.")
-                cocomo.cocomoStart(filepath)
             else:
                 print(f"Linguaggio rilevato: {languages[0]}; Il linguaggio non corrisponde all'estensione.")
+        cocomo.cocomoStart(filepath)
     else:
         print("Linguaggio di programmazione non riconosciuto.")
+        choise = input('Vuoi eseguire lo stesso il cocomo? [y/n]: ')
+        if choise == "y":
+            cocomo.cocomoStart(filepath)
+    print("Analisi file terminata")
+        
 
 
 
