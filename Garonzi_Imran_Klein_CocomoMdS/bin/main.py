@@ -1,5 +1,5 @@
 """
-Descrizione: Python program that determines the language in which a code file is written and checks
+Description: Python program that determines the language in which a code file is written and checks
              if it matches its extension.
 """
 
@@ -11,7 +11,7 @@ import cocomo
 
 # Globals
 PRODUCTION = True
-DEBUG = True
+DEBUG = False
 
 
 # Functions
@@ -108,7 +108,7 @@ def main():
             languages = [lang for lang in lang_percentages if lang_percentages[lang] == max_percentage]
             # Check if at least one of them corresponds to the file extension
             for lang in languages:
-                if extension in LANGS[lang]["estensioni"]:
+                if extension in LANGS[lang]["extensions"]:
                     languages = [lang]
                     break
 
@@ -124,8 +124,8 @@ def main():
             if len(languages) > 1:
                 print(f"Detected languages: {', '.join(languages)}; None of them corresponds to the extension.")
             else:
-                if extension in LANGS[languages[0]]["estensioni"]:
-                    print(f"Detected language: {languages[0]}; Language does correspond to the extension.")
+                if extension in LANGS[languages[0]]["extensions"]:
+                    print(f"Detected language: {languages[0]}; Language corresponds to the extension.")
                 else:
                     print(f"Detected language: {languages[0]}; Language does not correspond to the extension.")
             cocomo.cocomoStart(filepath)

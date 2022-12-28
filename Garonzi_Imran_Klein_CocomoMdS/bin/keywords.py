@@ -1,6 +1,6 @@
 LANGS = {
     "python": {
-        "estensioni": [".py"],
+        "extensions": [".py"],
         "keywords": [
             "False",
             "None",
@@ -40,7 +40,7 @@ LANGS = {
         ],
     },
     "java": {
-        "estensioni": [".java"],
+        "extensions": [".java"],
         "keywords": [
             "abstract",
             "assert",
@@ -95,7 +95,7 @@ LANGS = {
         ],
     },
     "javascript": {
-        "estensioni": [".js"],
+        "extensions": [".js"],
         "keywords": [
             "break",
             "case",
@@ -133,7 +133,7 @@ LANGS = {
         ],
     },
     "c": {
-        "estensioni": [".c"],
+        "extensions": [".c"],
         "keywords": [
             "auto",
             "break",
@@ -171,7 +171,7 @@ LANGS = {
         ],
     },
     "c++": {
-        "estensioni": [".cpp"],
+        "extensions": [".cpp"],
         "keywords": [
             "alignas",
             "alignof",
@@ -262,7 +262,7 @@ LANGS = {
         ],
     },
     "c#": {
-        "estensioni": [".cs"],
+        "extensions": [".cs"],
         "keywords": [
             "abstract",
             "as",
@@ -344,7 +344,7 @@ LANGS = {
         ],
     },
     "php": {
-        "estensioni": [".php"],
+        "extensions": [".php"],
         "keywords": [
             "__halt_compiler",
             "abstract",
@@ -416,7 +416,7 @@ LANGS = {
         ],
     },
     "assembly": {
-        "estensioni": [".asm"],
+        "extensions": [".asm"],
         "keywords": [
             "aad",
             "aam",
@@ -485,7 +485,7 @@ LANGS = {
         ],
     },
     "batch": {
-        "estensioni": [".bat"],
+        "extensions": [".bat"],
         "keywords": [
             "break",
             "call",
@@ -538,7 +538,7 @@ LANGS = {
         ],
     },
     "bash": {
-        "estensioni": [".bash"],
+        "extensions": [".bash"],
         "keywords": [
             "alias",
             "bg",
@@ -577,7 +577,7 @@ LANGS = {
         ],
     },
     "powershell": {
-        "estensioni": [".ps1"],
+        "extensions": [".ps1"],
         "keywords": [
             "Begin",
             "Break",
@@ -615,7 +615,7 @@ LANGS = {
         ],
     },
     "ruby": {
-        "estensioni": [".rb"],
+        "extensions": [".rb"],
         "keywords": [
             "__ENCODING__",
             "__LINE__",
@@ -661,7 +661,7 @@ LANGS = {
         ],
     },
     "go": {
-        "estensioni": [".go"],
+        "extensions": [".go"],
         "keywords": [
             "break",
             "case",
@@ -691,7 +691,7 @@ LANGS = {
         ],
     },
     "swift": {
-        "estensioni": [".swift"],
+        "extensions": [".swift"],
         "keywords": [
             "associatedtype",
             "class",
