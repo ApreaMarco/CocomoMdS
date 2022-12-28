@@ -107,7 +107,7 @@ def write(difficolta, developmentTime, manMonths):
     else:
         cocomo = "Intermediate"
     write = "Number of lines of code = " + str(LOC) + "\n" + "Difficulty = " + str(difficolta) + "\n" + "Months man = " + str(round(manMonths, 2)) + "\n" + "Development time = " + str(round(developmentTime, 2)) + "\n"
-    outputFile.write(cocomo + "Cocomo " + ":" + "\n" + write)
+    outputFile.write(cocomo + " Cocomo" + ":" + "\n" + write)
     outputFile.close() #Close the file for writing
 
 def cocomoStart(fp):
