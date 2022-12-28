@@ -1,6 +1,6 @@
 Results of the file 'cocomo.py'
 
-IntermediateCocomo :
+Intermediate Cocomo :
 Number of lines of code = 153
 Difficulty = complex
 Months man = 0.29
