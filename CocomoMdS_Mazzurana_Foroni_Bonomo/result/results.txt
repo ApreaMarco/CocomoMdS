@@ -1,0 +1,22 @@
+Script analysis for ../test/test.py
+
+language: assembly -> 3.53%
+language: bash -> 7.06%
+language: batch -> 3.53%
+language: c# -> 9.41%
+language: c++ -> 8.24%
+language: c -> 7.06%
+language: java -> 7.06%
+language: javascript -> 9.41%
+language: php -> 15.29%
+language: powershell -> 9.41%
+language: python -> 20.0%
+
+prevalent Language: python
+file extension: .py
+
+cocomo result: 
+number of lines of code: 54
+difficulty: easy
+months man: 0.11
+development time: 1.09
