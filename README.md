@@ -39,7 +39,7 @@ with the following structure:
 		
 	config
 		assembly_keywords.conf
-	    bash_keywords.conf
+	    	bash_keywords.conf
 		batch_keywords.conf
 		c#_keywords.conf
 		c_keywords.conf
