@@ -1,7 +1,6 @@
 #!python3
 
 import os
-import re
 import json
 
 # scripts import on scripts/ directory
