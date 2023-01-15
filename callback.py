@@ -10,7 +10,7 @@ import lizard
 
 # Globals
 PRODUCTION = True
-DEBUG = True
+DEBUG = False
 LOG = True
 LOG_FILE = "Result.txt"
 cin = input
