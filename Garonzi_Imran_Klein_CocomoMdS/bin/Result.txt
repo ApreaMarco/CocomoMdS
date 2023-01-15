@@ -1,7 +1,0 @@
-Results of the file 'cocomo.py'
-
-Intermediate Cocomo :
-Number of lines of code = 153
-Difficulty = complex
-Months man = 0.29
-Development time = 1.69
