@@ -1,7 +1,8 @@
 import os
 import re
-from keywords import keywords
 import metriche
+from extensions import extensions
+from guesslang import Guess
 
 
 def getInputFiles():
@@ -56,24 +57,22 @@ def calculate(filePath, outputFile):
 
 def getProgrammingLanguage(inputPath, outputFile):
     outputFile.write("File: " + inputPath + "\n")
-    languages = keywords.keys()
-    inputFile = open(inputPath, "r")
-    lines = inputFile.readlines()
-    totWords = 0
 
-    for key in languages:
-        words =  0
-        percentage = 0
-        for line in lines:
-            totWords += len(line.split())
-            for i in range(0, len(keywords[key])):
-                if re.search("^.+ " + keywords[key][i] + " .+$", line) or re.search("^.+ " + keywords[key][i] + " *\(.+$", line) or re.search("^\s*" + keywords[key][i] + " *\(.+$", line) or re.search("^\s*" + keywords[key][i] + " *\(.+$", line):
-                    if not (line.startswith(keywords[key][0])):
-                        words += 1
-        percentage = round((words * 100) / totWords, 2)
-        outputFile.write(key + ": " + str(percentage) + "%\n")
+    fileContent = open(filePath, "r").read()
 
-    inputFile.close()
+    guess = Guess()
+    name = guess.language_name(fileContent)
+
+    pathToFile = os.path.dirname(filePath)
+    fileFullName = filePath.split("\\")[-1]
+    baseName = fileFullName.split(".")[0]
+
+    for key in extensions:
+        if key == name:
+            os.rename(filePath, pathToFile + "\\" + baseName + "." + extensions[key])
+            break
+
+    outputFile.write("Linguagio: " + name)
 
 
 def main():
