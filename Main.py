@@ -1,3 +1,9 @@
+__author__ = ["Aprea Marco"]
+__copyright__ = "Copyright 2022"
+__version__ = "1.0.0"
+__maintainer__ = ["Aprea Marco"]
+__email__ = ["marco.aprea@marconiverona.edu.it"]
+
 from pathlib import Path
 from fileToText import plainText
 from languageDetection import getRecognizedLanguage as grl1
