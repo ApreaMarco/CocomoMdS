@@ -4,9 +4,11 @@ Description: Python program that determines the language in which a code file is
 """
 
 import os
-from extensions import *
-from guesslang import Guess
+
 import lizard
+from guesslang import Guess
+
+from extensions import *
 
 # Globals
 PRODUCTION = True
@@ -79,6 +81,7 @@ def main():
 
         def custom_output(string="", end="\n"):
             __output_file__.write(str(string) + end)
+
         cout = custom_output
 
     # Automatized input
@@ -90,6 +93,7 @@ def main():
             line = __input_file__.readline()[:-1]
             cout(line)
             return line
+
         cin = custom_input
 
     user_continue = True
@@ -109,20 +113,27 @@ def main():
         extension = os.path.splitext(filepath)[1]
         cout(f"File extension: '{extension}'")
         if LANG_EXTENSIONS[detected] != extension:
-            cout(f"Extension does not match detected language. Renaming...")
-            os.rename(filepath, os.path.splitext(filepath)[0] + LANG_EXTENSIONS[detected])
-            filepath = os.path.splitext(filepath)[0] + LANG_EXTENSIONS[detected]
+            if cin("Extension does not match detected language. Do you want to rename the file [y/n]? ").lower() == "y":
+                os.rename(filepath, os.path.splitext(filepath)[0] + LANG_EXTENSIONS[detected])
+                filepath = os.path.splitext(filepath)[0] + LANG_EXTENSIONS[detected]
 
         # Run code metrics, if possible
         if detected in LIZARD_SUPPORTED_LANGUAGES:
             cout(f"Running code metrics on '{filepath}'")
             code_metrics = lizard.analyze_file(filepath).__dict__
-            for key, value in code_metrics["function_list"][0].__dict__.items():
-                cout(f"{key}: {value}")
+
+            cout(f"total nloc: {code_metrics['nloc']}")  # General metrics
+            cout(f"total token count: {code_metrics['token_count']}")
+            cout(f"number of functions: {len(code_metrics['function_list'])}")
+
+            for f in code_metrics["function_list"]:  # For each function
+                for key, value in f.__dict__.items():
+                    cout(f"{key}: {value}")
 
         # Ask user whether to analyze another file
+        print(f"Analyzed '{os.path.abspath(filepath)}'")
         cout()
-        user_continue = cin("Do you want to analyze another file? [y/n]: ").lower() == "y"
+        user_continue = cin("Do you want to analyze another file [y/n]? ").lower() == "y"
 
 
 if __name__ == '__main__':
