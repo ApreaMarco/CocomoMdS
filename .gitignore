@@ -7,3 +7,6 @@ test/
 
 # Python cache
 *cache*
+
+# Python virtual environment
+venv

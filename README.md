@@ -9,6 +9,18 @@
 
 Python program that determines the percentage of compatibility of a code file with certain programming languages.
 
+## Requirements
+
+- Python version between `3.6` and `3.9`
+- `guesslang` library - for language detection
+  ```commandline
+  pip install guesslang
+  ```
+- `lizard` library - for code metrics
+  ```commandline
+  pip install lizard
+  ```
+
 ## Execution
 
 Open a terminal with path './Garonzi_Imran_Klein_CocomoMdS/bin/Garonzi_Imran_Klein_CocomoMdS/' and type the following command:
@@ -31,12 +43,20 @@ Open a terminal with path './Garonzi_Imran_Klein_CocomoMdS/bin/Garonzi_Imran_Kle
 
 ## Progress
 
+#### 15/01/2022
+
+- Reimplemented percentages calculation
+- Reimplemented code metrics
+- Used `callback.py` template
+
 #### 12/18/2022
+
 - Reimplemented the keyword count
 - Calculated the percentages for each language
 - Documented the code
 
 #### 12/17/2022
+
 - Creation and drafting of files
 - Creating dictionaries
 - Insertion of inputs with relative controls
